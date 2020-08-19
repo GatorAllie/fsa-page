@@ -3,7 +3,7 @@
 
   </head>
   <body>
-        <style>
+       <style>
       .tooltip {
         position: relative;
         display: inline-block;
@@ -44,8 +44,8 @@
       }
 
       .dashboard {
-        padding: 10px;
-       /* margin-bottom: 2em;*/
+        /*padding: 10px; quaqua*/
+       
         position: relative;
         margin-left: auto;
         margin-right: auto;
@@ -73,8 +73,8 @@
         margin: 15px;
         background-color: #ffffff;
         
-        border-style: dotted;
-        border-width:  2px;
+        border-style: dashed;
+        border-width:  1px;
 
         border-color: #C0C0C0;
         box-sizing: border-box;
@@ -96,17 +96,14 @@
         /*border: 1px solid #f5a624;*/
 
         width: 100%;
-        /*box-shadow: 0 2px 2px rgba(0,90,250,0.05),
-          0 4px 4px rgba(0,90,250,0.05),
-          0 8px 8px rgba(0,90,250,0.05),
-          0 16px 16px rgba(0,90,250,0.05);*/
+        
         align-self: center;
         vertical-align: top;
         /*align-items: center;*/
         font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;
         line-height: 1.5;
         /*text-align: top;*/
-        text-align: justify;
+        text-align: left;
         text-justify: inter-word;
         color: #a9a9a9;
         padding-left: 15px;
@@ -119,12 +116,7 @@
         box-sizing: border-box;
         /*border: 1px solid #f5a624;*/
         width: 100%;
-        /*
-          box-shadow: 0 2px 2px rgba(0,90,250,0.05),
-          0 4px 4px rgba(0,90,250,0.05),
-          0 8px 8px rgba(0,90,250,0.05),
-          0 16px 16px rgba(0,90,250,0.05);*/
-        /*align-items: center;*/
+        
         align-self: top;
         display: block;
         font-size: 1.5em;
@@ -139,65 +131,11 @@
         color: #4b9bb0 !important;
       }
 
-      .imageboxOld{
-        width: 100%;
-        min-width: 280px;
-        min-height: 140px;
-        max-width: 600px;
-        max-height: 400px;
-        /*height: 200px;*/
-        align-content: center;
-        vertical-align: top;
-        border-width: 0px;
-        border-style: solid;
-        border-color: #efefef;
-        opacity: 0.5;
-        text-align: center;
-        font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif !important;
-        text-transform: uppercase !important;
-        color: #ffffff;
-        background: rgba(0, 0, 0, 0.4); come era prima
-        
-        z-index: 1;
-
-      }
-
-      /* Bottom right text */
-      .text-block {
-       /* position: absolute;
-        bottom: 10px;
-        right: 10px;*/
-        background-color: lightgrey;
-        color: white;
-        padding-left: 20px;
-        padding-right: 20px;
-        border-radius: 5px;
-      }
-
-      .text-block-w{
-       
-        background-color: white;
-        color: black;
-        padding-left: 20px;
-        padding-right: 20px;
-        border-radius: 5px;
-        min-width: 100px;
-        min-height: 40px;
-        max-width: 300px;
-        max-height: 200px;
-        opacity: 0.5
-        
-      }
-
       .imagebox{
-       /* Here's the trick */
         box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.3);
 
-        /* Basic background styles */
-      /*  background: var(--image-url) center center no-repeat; */
         background-size: cover;
 
-        /* Here's the same styles we applied to our content-div earlier */
         color: white;
         width: 100%;
         min-width: 280px;
@@ -206,15 +144,13 @@
         max-height: 400px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: right;
       } 
-
-      
 
       .btn {
         border: none;
         background-color: inherit;
-        padding: 4px 18px;
+        padding: 4px 12px;
         font-size: 15px;
         cursor: pointer;
         display: inline-block;
@@ -244,7 +180,7 @@
       .bottoniera {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-wrap: wrap;
         padding: 1%;
         
@@ -267,40 +203,42 @@
         border-style: solid;*/
         vertical-align: bottom;
       }
-
-      img{
-        width: 100%;
-        height: 100%;
-        
-      } 
-
-
+ 
     </style>
     <div class="dashboard">
       <div class="flex">
        
-      <div class="child five">
+      <div class="child">
         
-          <div class="header five">
-            <div class="imagebox "> <img src="geo.jpg"></div>
+          <div class="header">
+            <div class="imagebox "> <img src="https://files.spazioweb.it/a0/db/a0db44bf-554f-4293-a9aa-839539ba2236.jpg" width="100%" height="100%"></div>
             <div class="title">Geobiologia</div>
             <div class="description">
               Scienza che studia l'influenza delle emanazioni cosmiche e
               geotelluriche su tutti gli esseri viventi. L'obiettivo di questa
-              analisi è la definizione di ambienti sani e non più nocivi per chi
-              li vive.
+              analisi è la definizione di ambienti sani sui quali non gravino influenze negative e nocive per chi li vive.
             </div>
           </div>
           <div class="childbody">
             <div class="bottoniera">
               <div class="buttonbox">
+                <div class="tooltip">
                 <button class="btn arancioW">CASI D'USO</button>
+                <span class="tooltiptext"><ul><li>Desideri svegliarti più riposato?</li>
+                 <li> Vuoi vivere in aree sane?</li>
+                  <li>Vuoi evitare di esporti a emissioni nocive naturali?</li>
+                  <li>Massimizzazione dello spazio</li>
+                 <li> Ristrutturazione parziale</li>
+                  <li>Nuova costruzione e progettazione</li>
+                  </ul>
+              </span>
               </div>
+            </div>
               <div class="buttonbox">
                 <button class="btn ble">DETTAGLI</button>
               </div>
               <div class="buttonbox">
-                <button class="btn violaW">PREVENTIVO</button>
+                <button class="btn violaW">PRENOTA</button>
               </div>
             </div>
           </div>
@@ -310,7 +248,7 @@
         <div class="child">
           <div class="header">
             <div class="imagebox">
-              <img src="fs2.jpg">
+              <img class="myimg" src="https://files.spazioweb.it/7d/2f/7d2f4c51-3857-43cf-a527-ec8216abbb8f.jpg" width="100%" height="100%">
             </div>
             <div class="title">Feng Shui</div>
             <div class="description">
@@ -324,20 +262,31 @@
           <div class="childbody">
             <div class="bottoniera">
               <div class="buttonbox">
-                <button class="btn arancioW">CASI D'USO</button>
+                 <div class="tooltip">
+                    <button class="btn arancioW">CASI D'USO</button>
+                    <span class="tooltiptext"><ul><li>
+                      Vuoi essere circondato da armonia e buona energia?
+                    </li>
+                 <li> Desideri massimizzare la tua resa lavorativa, o la tua relazione privata?</li>
+                  <li>Vuoi potenziare la tua persona e il tuo benessere?</li>
+                  <li>Massimizzazione dello spazio</li>
+                 <li> Ristrutturazione parziale</li>
+                  <li>Nuova costruzione e progettazione</li>
+                  </ul>
+                </div>
               </div>
               <div class="buttonbox">
                 <button class="btn ble">DETTAGLI</button>
               </div>
               <div class="buttonbox">
-                <button class="btn violaW">PREVENTIVO</button>
+                <button class="btn violaW">PRENOTA</button>
               </div>
             </div>
           </div>
         </div>
         <div class="child">
           <div class="header">
-            <div class="imagebox"> <img src="elettrosmog.jpg"></div>
+            <div class="imagebox"> <img src="https://files.spazioweb.it/25/4b/254b7c12-210d-41de-80ed-2e6712819973.jpg" width="100%" height="100%"></div>
             <div class="title">Elettrosmog</div>
             <div class="description">
               Inquinamento elettromagnetico, conseguenza del progresso
@@ -355,7 +304,7 @@
                 <button class="btn ble">DETTAGLI</button>
               </div>
               <div class="buttonbox">
-                <button class="btn violaW">PREVENTIVO</button>
+                <button class="btn violaW">PRENOTA</button>
               </div>
             </div>
           </div>
@@ -363,7 +312,7 @@
         <div class="child">
           <div class="header">
             <div class="imagebox">
-               <img src="yi jing.jpg">
+               <img src="https://files.spazioweb.it/85/d3/85d321f7-079b-4895-a857-b1aca354e717.jpg" width="100%" height="100%">
             </div>
             <div class="title">Yi Jing</div>
             <div class="description">
@@ -382,7 +331,7 @@
                 <button class="btn ble">DETTAGLI</button>
               </div>
               <div class="buttonbox">
-                <button class="btn violaW">PREVENTIVO</button>
+                <button class="btn violaW">PRENOTA</button>
               </div>
             </div>
           </div>
@@ -390,7 +339,7 @@
         <div class="child">
           <div class="header">
             <div class="imagebox">
-               <img src="bazi1.jpg">
+               <img src="https://files.spazioweb.it/89/28/8928b8db-25fb-4e3f-8a46-f6f83a42881a.jpg" width="100%" height="100%">
             </div>
             <div class="title">Bazi</div>
             <div class="description">
@@ -409,7 +358,7 @@
                 <button class="btn ble">DETTAGLI</button>
               </div>
               <div class="buttonbox">
-                <button class="btn violaW">PREVENTIVO</button>
+                <button class="btn violaW">PRENOTA</button>
               </div>
             </div>
           </div>
@@ -417,7 +366,7 @@
         <div class="child">
           <div class="header">
             <div class="imagebox">
-               <img src="selection date.jpg">
+               <img src="https://files.spazioweb.it/b2/47/b2478614-1aa1-4b0c-bf2f-c1d41d47581b.jpg" width="100%" height="100%">
             </div>
             <div class="title">Selection Date</div>
             <div class="description">
@@ -436,7 +385,7 @@
                 <button class="btn ble">DETTAGLI</button>
               </div>
               <div class="buttonbox">
-                <button class="btn violaW">PREVENTIVO</button>
+                <button class="btn violaW">PRENOTA</button>
               </div>
             </div>
           </div>
@@ -445,7 +394,7 @@
         <div class="child">
           <div class="header">
             <div class="imagebox">
-                <img src="bioarchitettura.jpg">
+                <img src="https://files.spazioweb.it/db/89/db89ff5b-9723-41c6-817b-5e66d2012691.jpg" width="100%" height="100%">
             </div>
             <div class="title">Bioarchitettura</div>
             <div class="description">
@@ -464,7 +413,7 @@
                 <button class="btn ble">DETTAGLI</button>
               </div>
               <div class="buttonbox">
-                <button class="btn violaW">PREVENTIVO</button>
+                <button class="btn violaW">PRENOTA</button>
               </div>
             </div>
           </div>
@@ -472,7 +421,7 @@
         <div class="child">
           <div class="header">
             <div class="imagebox">
-                <img src="lecher.jpg">
+                <img src="https://files.spazioweb.it/64/31/643192aa-9574-43aa-9429-43c600832273.jpg" width="100%" height="100%">
             </div>
             <div class="title">Antenna Lecher</div>
             <div class="description">
@@ -490,7 +439,7 @@
                 <button class="btn ble">DETTAGLI</button>
               </div>
               <div class="buttonbox">
-                <button class="btn violaW">PREVENTIVO</button>
+                <button class="btn violaW">PRENOTA</button>
               </div>
             </div>
           </div>
@@ -498,7 +447,7 @@
         <div class="child">
           <div class="header">
             <div class="imagebox">
-               <img src="qimen dun jia.jpg">
+               <img src="https://files.spazioweb.it/5c/f0/5cf098e2-8cac-4165-be40-0a17c39776ac.jpg" width="100%" height="100%">
             </div>
             <div class="title">Qimen dun Jia</div>
             <div class="description">
@@ -516,7 +465,7 @@
                 <button class="btn ble">DETTAGLI</button>
               </div>
               <div class="buttonbox">
-                <button class="btn violaW">PREVENTIVO</button>
+                <button class="btn violaW">PRENOTA</button>
               </div>
             </div>
           </div>
@@ -529,5 +478,8 @@
 
 
     </div>
+
+
+
   </body>
 </html>
