@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<style>
+		.branding .branding__logo {
+
+			border-color: green;
+			border-width: 5px;
+
+		}
+	</style>
+   <div class="bk-branding  branding  widget__branding alignment--center">
+            <div class="branding__logo">
+            <a href="/" class="branding__link">
+                <img src="https://files.spazioweb.it/95/b7/95b7d9ff-9930-49cc-b1ac-db11cafb004f.png" class="branding__logo-image" alt="" style="max-height:120px;">
+            </a>
+        </div>
+    </div>
+<script>
+
+	 $(document).ready(function(){
+	 	var url_string = window.location.href; 
+        var url = new URL(url_string);
+        var paramValue = url.searchParams.get("menvis");
+        if( paramValue=='n' ) {
+        	alert('non si fa vedere');
+        }
+        else{
+        	alert('SI FA VEDERE');
+        }
+    $(".bk-extendednavigation").toggleClass("nasconditi");
+    $(".bk-branding").toggleClass("nasconditi");
+   document.getElementById("page-zones__preheader").style.display = "none";
+   document.getElementById("page-zones__header").style.display = "none";
+   
+ });
+</script>
+
+   
+<style type="text/css">
+    .nasconditi{
+    display: none;
+
+    }
+  </style>
+</body>
+</html>
