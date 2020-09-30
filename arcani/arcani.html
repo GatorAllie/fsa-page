@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gli Arcani del piacere</title>
+</head>
+<body>
+	<style type="text/css">
+
+
+		.footer {
+		 
+		  left: 0;
+		  bottom: 0;
+		  width: 100%;
+		  background-color: inherit;
+		  color: white;
+		  text-align: center;
+		  padding: 20px 10px
+		}
+
+
+		/* Style the header with a grey background and some padding */
+		.header {
+			
+		  overflow: hidden;
+		  background-color: inherit;
+		  padding: 20px 10px;
+		}
+
+		/* Style the header links */
+		.header a {
+		  float: left;
+		  color: #651488;
+		  text-align: center;
+		  padding: 12px;
+		  text-decoration: none;
+		  font-size: 18px;
+		  line-height: 25px;
+		  border-radius: 4px;
+		}
+
+		/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+		.header a.logo {
+		  font-size: 32px;
+		  font-weight: bold;
+		  color: #651488;
+		}
+
+		/* Change the background color on mouse-over */
+		.header a:hover {
+		  background-color: #8149ab;
+		  color: white;
+		}
+
+		/* Style the active/current link*/
+		.header a.active {
+		  background-color: #651488;
+		  color: white;
+		}
+
+		/* Float the link section to the right */
+		.header-right {
+		  float: right;
+		}
+
+		/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+		@media screen and (max-width: 500px) {
+		  .header a {
+		    float: none;
+		    display: block;
+		    text-align: left;
+		  }
+		  .header-right {
+		    float: none;
+		  }
+		}
+
+
+		body{
+			/*palette: #a132c1 #d9b2ef #a45bcf #f4e2f9 #ba7ce3 #8149ab(scuro) #651488(prugna) #a277c4; #94749c(grigio) #5d0073(scuro come centro occhio)
+			#aa37c8(bordo carta)*/
+		padding:0;
+		margin:0;
+		display: flex;
+		flex-direction: column;
+		justify-content:center;
+		align-items: center;
+		/* original orange
+		background:linear-gradient(to right, #ff6a00,#ee0979);*/
+		background-image: linear-gradient(to right top, #7c00bc, #7707b0, #710da5, #6c1199, #66148e);
+		background: linear-gradient(to right, #aa37c8,#d8b1ee );
+		min-height: 100vh;
+	}
+
+	.container{
+		width: 1000px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+
+	}
+
+	.mainbox{
+		position: relative;
+		width: 280px;
+		height: 400px;
+		display: none;
+		border-radius: 10px;
+		
+		box-shadow: 0 30px 30px rgba(0,0,0,0.3);
+		overflow: hidden;
+
+	}
+
+	.mainbox .imgbox{
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.mazzomainbox .mazzobox{
+		border-left: 5px;
+		border-bottom: 5px;
+		background-color: #aa37c8;
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.mazzomainbox .mazzobox img{
+		/*object-fit: cover;*/
+		background-size: cover;
+		transition: all 0.5s;
+		width: 100%;
+		height: 100%;
+	}
+
+	
+
+	.mainbox .imgbox img{
+		/*object-fit: cover;*/
+		background-size: cover;
+		transition: all 0.5s;
+		width: 100%;
+		height: 100%;
+	}
+    .mainbox .imgbox hover{
+    	opacity: 0;
+    }
+
+    .mainbox .details{
+    	position: absolute;
+    	left: 37%;
+    	width: 80px;
+    	height: 80px;
+    	bottom: 30px;
+    	border-radius: 50%;
+    	/* arancio originale
+    	background: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);*/
+    	
+    	background: linear-gradient(147deg, #a132c1 0%, #8149ab 74%);
+
+    	overflow: hidden;
+    	color: #292929;
+    	transition: all .5s ease;
+
+    }
+
+    .mainbox .details h3{
+    	text-align: center;
+    	font-family: 'century gothic';
+    	font-weight: 700;
+    	margin-top:25px;
+    	color:#fff;
+    }
+
+    .mainbox .details .info{
+    	display: none;
+    	margin: 25px;
+    	text-align: center;
+    	padding: 15px;
+    	color: #ffff;
+    	border-radius: 10px;
+    	height: 260px;
+    	border: 1px solid #fff;
+    	font-family: 'century gothic'
+    }
+
+    .mainbox .details .cardTitle{
+    	display: none;
+    	
+    }
+    .mainbox .details .cardDescription{
+    	display: none;
+    	
+    }
+    .mainbox:hover .details{
+    	left:0;
+    	width: 100%;
+    	height: 100%;
+    	bottom: 0px;
+    	border-radius: 0;
+
+    }
+
+    .mainbox .details:hover .info{
+    	display: block;
+     }
+
+     .mainbox .details:hover .cardTitle
+     {
+    	display: block;
+     }
+
+     .mainbox .details:hover .cardDescription
+     {
+    	display: block;
+     }
+
+     .mainbox .details:hover .Gira{
+    	display: none;
+     }
+
+
+     .mazzocontainer{
+     	display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+     }
+
+     .mazzomainbox{
+     	position: relative;
+     	width: 220px;
+     	height: 320px;
+     	/*width: 240px;
+     	height: 360px;*/
+     	/*width: 180px;
+		height: 260px;*/
+		/*width: 280px;
+		height: 400px;*/
+		border-radius: 10px;
+		
+		box-shadow: 0 30px 30px rgba(0,0,0,0.3);
+		overflow: hidden;
+
+     }
+
+     .bottoneMazzobox{
+     	display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 20px 10px;
+
+     }
+
+     .btn {
+        border: none;
+        background-color: inherit;
+        padding: 8px 16px;
+        font-size: 20px;
+        cursor: pointer;
+        display: inline-block;
+        border-radius: 25px;
+        box-shadow: 0 30px 30px rgba(0,0,0,0.5);
+      }
+
+      .bttMescola {
+        color: white;
+        background-color:  #8149ab;
+        font-weight: bold;
+      }
+	</style>
+	<script type="text/javascript">
+
+		var statoDelGioco = "toStart";//paused or playing
+		var carteScelte = 0; //1 2 o 3
+		var carte = new Array();
+		carte[0] = {"numero": 0, "titolocarta":"Il matto",
+						"descrizione": "Questo è un Jolly!",
+						"istruzioni": "Pratica o ricevi dal partner tutto quello che vuoi per il tempo da te stabilito",
+						"sfondo":"",
+						"musica": "",
+						"tempo": ""
+						};
+		carte[1]={"numero": 1, 
+			"titolocarta":"Il bagatto",
+			"descrizione": "Oggetti vari",
+			"istruzioni": "Utilizza almeno due oggetti a tua scelta per dare piacere al partner e dedicati a lui/lei per almeno 10 minuti",
+			"sfondo":"",
+			"musica": "",
+			"tempo":""
+			};
+		carte[2] = {
+			"numero": 2, 
+			"titolocarta":"La Papessa",
+			"descrizione": "Fase di ripresa",
+			"istruzioni": "In silenzio restare abbracciati a guardarsi negli occhi per almeno 20 minuti",
+			"sfondo":"",
+			"musica": "",
+			"tempo":""
+			};
+
+		function getCarta() {
+			//alert(carte[0]);
+			//alert(carteScelte);
+			if( carteScelte == 0 ){
+				document.getElementById("carta1").style.display="block";
+				
+				document.getElementById("carta1.titolo").innerHTML =carte[0].titolocarta; 
+				document.getElementById("carta1.descrizione").innerHTML =carte[0].descrizione;
+				document.getElementById("carta1.info").innerHTML =carte[0].istruzioni; 
+				
+				carteScelte= carteScelte+1;
+				return;
+			}
+			if( carteScelte == 1 ){
+				document.getElementById("carta2").style.display="block";
+				
+				document.getElementById("carta2.titolo").innerHTML =carte[1].titolocarta; 
+				document.getElementById("carta2.descrizione").innerHTML =carte[1].descrizione;
+				document.getElementById("carta2.info").innerHTML =carte[1].istruzioni; 
+				
+
+				carteScelte= carteScelte+1;
+				return;
+			}
+			if( carteScelte == 2 ){
+				document.getElementById("carta3").style.display="block";
+				
+				document.getElementById("carta3.titolo").innerHTML =carte[2].titolocarta; 
+				document.getElementById("carta3.descrizione").innerHTML =carte[2].descrizione;
+				document.getElementById("carta3.info").innerHTML =carte[2].istruzioni; 
+				
+				
+				carteScelte= carteScelte+1;
+				return;
+			}
+			return;
+
+
+		}
+
+		function start(){
+			
+				
+				document.getElementById("buttonStart").style.display="none";
+				document.getElementById("buttonPause").style.display="block";
+		}
+
+		function riparti(){
+			document.getElementById("buttonContinue").style.display="none";
+			document.getElementById("buttonPause").style.display="block";
+			
+		}
+
+		function pause() {
+			document.getElementById("buttonContinue").style.display="block";
+			document.getElementById("buttonStart").style.display="none";
+			document.getElementById("buttonPause").style.display="none";
+		}
+
+		function resetGioco() {
+			document.getElementById("carta1").style.display="none";
+			document.getElementById("carta2").style.display="none";
+			document.getElementById("carta3").style.display="none";
+			document.getElementById("buttonContinue").style.display="none";
+			document.getElementById("buttonStart").style.display="block";
+			document.getElementById("buttonPause").style.display="none";
+			document.getElementByClassName("details").innerHTML="Gira";
+
+			carteScelte =0;
+
+		}
+
+		
+
+		function toggleGira(idObj, show) {
+		    if (show) {
+		        // code here for what would be your 'it became visible' event.
+		    } else {
+		        // code here for what would be your 'it became invisible' event.
+		    }
+		    document.getElementById(idObj).style.display = show ? "block" : "none";
+}
+		
+	</script>
+	<div class="header">
+  <a href="#default" class="logo">GLI ARCANI DEL PIACERE</a>
+  <div class="header-right">
+    <a class="active" href="#home">Cosa sono</a>
+    <a href="#contact">Regole del gioco</a>
+    <a href="#about">Contatti</a>
+  </div>
+</div>
+	<div class="mazzocontainer">
+		<div class="mazzomainbox">
+			<div class="mazzobox"><img src="tarocchi-retro1.jpg" alt="tarocco"></div>
+		</div>
+		<div class="mazzomainbox" >
+			<div class="bottoneMazzobox" >		
+				<button class="btn bttMescola">Mescola le carte</button>	
+			</div>
+			<div class="bottoneMazzobox">
+				
+				<button class="btn bttMescola" onclick="getCarta()">Pesca una carta</button>	
+			</div>
+			<div class="bottoneMazzobox">
+				
+				<button class="btn bttMescola" onclick="resetGioco()">Reset del gioco</button>	
+			</div>
+			<div class="bottoneMazzobox">
+				
+				<button class="btn bttMescola" id="buttonStart" onclick="start()">Inizia</button>	
+				<button class="btn bttMescola" id="buttonPause" onclick="pause()" style="display: none">Metti in pausa</button>
+				<button class="btn bttMescola" id="buttonContinue" onclick="riparti()" style="display: none">Riparti</button>	
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="mainbox" id="carta1">
+			<div class="imgbox"><img src="tarocchi-retro1.jpg" alt="tarocco"></div>
+			<div class="details" id="carta1.details">
+				<h3 class="Gira" id="carta1.gira">Gira</h3>
+				<h3 class="cardTitle" id="carta1.titolo"> </h3>
+				<h3 class="cardDescription" id="carta1.descrizione"> </h3>
+				<div class="info" id="carta1.info">
+					<h3>Bellissimo gioco!</h3>
+					<p>
+						Questa è una bellissima demo di 
+						come può essere il gioco;
+					</p>
+				</div>				
+			</div>
+		</div><!-- end mainbox-->
+		<div class="mainbox" id="carta2">
+			<div class="imgbox"><img src="tarocchi-retro1.jpg" alt="tarocco"></div>
+			<div class="details" id="carta2.details">
+				<h3 class="Gira" id="carta2.gira">Gira</h3>
+				<h3 class="cardTitle" id="carta2.titolo"> </h3>
+				<h3 class="cardDescription" id="carta2.descrizione"> </h3>
+				<div class="info" id="carta2.info">
+					<h3>Bellissimo gioco!</h3>
+					<p>
+						Questa è una bellissima demo di 
+						come può essere il gioco;
+					</p>
+				</div>				
+			</div>
+		</div><!-- end mainbox-->
+		<div class="mainbox" id="carta3">
+			<div class="imgbox"><img src="tarocchi-retro1.jpg" alt="tarocco"></div>
+			<div class="details" id="carta3.details">
+			<h3 class="Gira" id="carta3.gira">Gira</h3>
+			<h3 class="cardTitle" id="carta3.titolo"> </h3>
+				<h3 class="cardDescription" id="carta3.descrizione"> </h3>
+				<div class="info" id="carta3.info">
+					<h3>Bellissimo gioco!</h3>
+					<p>
+						Questa è una bellissima demo di 
+						come può essere il gioco;
+					</p>
+				</div>				
+			</div>
+		</div><!-- end mainbox-->
+       
+
+	</div><!-- end container-->
+
+<footer>
+	<div class="footer">
+ 
+  <div class="header-right">
+    <a href="#termini">Termini trattamento dati</a>
+    <a href="#social">Social</a>
+    <a href="#contatti">Contatti</a>
+  </div>
+</div>
+</footer>
+</body>
+</html>
