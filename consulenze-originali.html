@@ -1,26 +1,20 @@
-<!DOCTYPE html>
+</!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+  <title></title>
 </head>
 <body>
+
 <style>
       .tooltip {
         position: relative;
-       /* display: inline-block;
+        display: inline-block;
         border-bottom: 0px dotted black;
-        */
-        display: flex;
-  		  align-items: center;
-     
       }
 
       .tooltip .tooltiptext {
         visibility: hidden;
-        box-sizing: border-box;
-        width: 100%;
-        align-self: center;
-        vertical-align: top;
+        width: 400px;
         
         background-color: #333;
         color: #ffffff;
@@ -31,7 +25,7 @@
         z-index: 1;
         bottom: 100%;
         left: 50%;
-      /*  margin-left: -200px;*/
+        margin-left: -200px;
         opacity: 0;
         transition: opacity 0.3s;
 
@@ -54,7 +48,11 @@
         opacity: 1;
       }
 
-
+/*
+  		ul li:before {
+  			content: '✓';
+		}
+		*/
       .dashboard {
         /*padding: 10px; quaqua*/
        
@@ -104,7 +102,11 @@
         background-color: #ffffff;
         border-radius: 3px;
         box-sizing: border-box;
+
+        /*border: 1px solid #f5a624;*/
+
         width: 100%;
+        
         align-self: center;
         vertical-align: top;
         /*align-items: center;*/
@@ -116,7 +118,6 @@
         color: #a9a9a9;
         padding-left: 15px;
         padding-right: 15px;
-        position: relative;
       }
 
       .title {
@@ -176,6 +177,7 @@
          background-color: #cb6e94;
          color: white;
          font-weight: bold;
+
       }
 
       .bttCasiduso
@@ -216,36 +218,21 @@
     .threeitemsfirst{
     	font-family: Ink Free; 
     	font-size: 16px;
-      background: #333;
-      color: #ffffff;
-      padding-left: 5px;
-      border-top-right-radius: 6px;
-      border-top-left-radius: 6px;
-
-      top: -20px;
-      left: 20px;
-      
-
 
     }
     .threeitemssecond{
     	font-family: Calibri; 
     	font-size: 16px;
     	font-weight: bold;
-    	padding-left: 25px; 
-    	background: #333;
-      color: #ffffff;
-
-      top: -20px;
-      left: 20px;
-      
+    	padding-left: 20px; 
+    	padding-top: 10px;
     }
-    
 
-     .boxDesc{
+    .boxDesc{
         width: 90%;
         height: 90%;            
         position: absolute;
+        
         opacity: 0.8;
         border-radius: 6px;  
         margin-top: -5px;
@@ -263,9 +250,9 @@
 
     }
 
-    
+     
     </style>
-  <script>
+    <script>
     function showCases(){
       //alert('usecase.style.visibility=' + document.getElementById("ovGeobiologia").visibility);
       document.getElementById("ovGeobiologia").style.visibility="visible";
@@ -286,25 +273,23 @@
             <div class="imagebox "> <img src="https://files.spazioweb.it/a0/db/a0db44bf-554f-4293-a9aa-839539ba2236.jpg" width="100%" height="100%"></div>
             <div class="title">Geobiologia</div>
             <div class="description">
-                <div class="boxDesc" >
-                  Metodo di divinazione cinese mediante la lettura degli esagrammi, comunemente chiamato "I Ching"; restituisce una lettura delle energie che transitano in quel particolare unico momento per offrire una maggiore comprensione della realtà che si vive.
-                </div>
-               <div class="boxDesc stack-top" id="ovGeobiologia">
-                
-                  <div  class="threeitemsfirst">
-                Meriti una <strong>vita</strong> più appagante?<BR>
-            Circondati di buona <strong>energia</strong> e <strong>armonia</strong><BR>
-            Potenzia la tua <strong>persona</strong> e il tuo <strong>benessere</strong><BR>
-                       </div>
-                    <div class="threeitemssecond"> 
-                      ✓ INCANALA l’ABBONDANZA<BR>
-              ✓ TRASFORMA l’ENERGIA nello SPAZIO<BR>
-                          ✓ MASSIMIZZA il tuo AMBIENTE<BR>
-
-                    </div>
-                </div>
+              <div class="boxDesc" >
+                Disciplina che studia l'influenza delle emanazioni cosmiche e geotelluriche su tutti gli esseri viventi.<BR/> L'obiettivo finale di questa analisi è l’individuazione di ambienti sani sui quali non gravino influenze negative e/o nocive per chi li vive quotidianamente.
+              </div>
+              <div class="boxDesc stack-top" id="ovGeobiologia" >
+                  <div class="threeitemsfirst">
+                     Desideri <strong>svegliarti più riposato</strong>?<BR>
+                     Vuoi vivere in <strong>aree sane</strong>?<BR>
+                     Vuoi evitare di esporti a <strong>emissioni nocive naturali</strong>?<BR>  
+                  </div>
+                  <div class="threeitemssecond"> 
+                    ✓ RISTABILISCI l’EQUILIBRIO<BR>
+                    ✓ RENDI SANO l’AMBIENTE<BR>
+                    ✓ SUPPORTA l’ORGANISMO <BR>           
+                  </div>           
+              </div>
             </div>
-          </div>
+          </div>          
           <div class="childbody">
             <div class="bottoniera">
               
@@ -312,11 +297,10 @@
                 <button class="btn bttDettagli">DETTAGLI</button>
               </div>
               <div class="buttonbox">
-              
                 <button class="btn bttCasiduso" onmouseover="showCases()" onmouseout="hiddenCases()">CASI D'USO</button>
             </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+               <a href="/aumenta-il-benessere-nel-tuo-ambiente-richiedi-la-tua-consulenza"> <button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
@@ -330,11 +314,8 @@
             </div>
             <div class="title">Feng Shui</div>
             <div class="description">
-              Scienza metafisica orientale utilizzabile sia nelle abitazioni
-              private sia in ambienti lavorativi, potenzia il benessere
-              psicofisico, relazionale, lo stato di salute così come incrementa
-              la produttività e migliora le potenzialità e talenti di chi abita
-              o lavora in questi luoghi.
+              
+              Scienza metafisica orientale utilizzabile sia nelle abitazioni private sia in ambienti lavorativi, potenzia il benessere psicofisico, relazionale, lo stato di salute così come incrementa la produttività e migliora le potenzialità e i talenti di chi abita o lavora in questi luoghi.
             </div>
           </div>
           <div class="childbody">
@@ -363,7 +344,7 @@
                 </div>
               </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+               <a href="/aumenta-il-benessere-nel-tuo-ambiente-richiedi-la-tua-consulenza"> <button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
@@ -373,10 +354,10 @@
             <div class="imagebox"> <img src="https://files.spazioweb.it/25/4b/254b7c12-210d-41de-80ed-2e6712819973.jpg" width="100%" height="100%"></div>
             <div class="title">Elettrosmog</div>
             <div class="description">
-              Inquinamento elettromagnetico, conseguenza del progresso
-              tecnologico, tratta emissioni elettriche, magnetiche ed
-              elettromagnetiche emesse da fonti artificiali.<BR> L'investigazione di
-              queste emissioni mira la tutela della persona.
+              
+              Inquinamento elettromagnetico: una conseguenza del progresso tecnologico, frutto di emissioni elettriche, magnetiche ed elettromagnetiche emesse da fonti artificiali.
+L'investigazione di queste emissioni e gli interventi successivi mirano alla tutela della salute della persona.
+
             </div>
           </div>
           <div class="childbody">
@@ -405,7 +386,7 @@
               </div>
            </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+                <a href="/aumenta-il-benessere-nel-tuo-ambiente-richiedi-la-tua-consulenza"><button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
@@ -417,10 +398,8 @@
             </div>
             <div class="title">Yi Jing</div>
             <div class="description">
-              Metodo di divinazione mediante gli esagrammi, chiamato anche "I
-              Ching", restituisce una lettura delle energie che transitano in
-              quel particolare momento presente al fine di una maggiore
-              comprensione della realtà che si vive.
+              Metodo di divinazione cinese mediante la lettura degli esagrammi, comunemente chiamato "I Ching"; restituisce una lettura delle energie che transitano in quel particolare unico momento per offrire una maggiore comprensione della realtà che si vive.
+              
             </div>
           </div>
           <div class="childbody">
@@ -451,7 +430,7 @@
               </div>
           </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+                <a href="/tu-al-centro-prenota-la-tua-analisi"><button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
@@ -463,10 +442,7 @@
             </div>
             <div class="title">Bazi</div>
             <div class="description">
-              Sistema avanzato di astrologia, tecnica che analizza la tipologia
-              e la composizione energetica individuale, le predisposizioni e le
-              attitudini, le interazioni con le energie che transitano nel tempo
-              e che creano influenze positive o sfavorevoli.
+             Sistema avanzato di astrologia, una tecnica che analizza la tipologia e la composizione energetica individuale, le predisposizioni e le attitudini, le interazioni con le energie che transitano nel tempo e che creano influenze positive o sfavorevoli.
             </div>
           </div>
           <div class="childbody">
@@ -495,7 +471,7 @@ Arricchisci <strong>relazioni lavorative</strong> e <strong>private</strong><br>
               </div>
           </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+                <a href="/tu-al-centro-prenota-la-tua-analisi"><button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
@@ -507,10 +483,8 @@ Arricchisci <strong>relazioni lavorative</strong> e <strong>private</strong><br>
             </div>
             <div class="title">Selection Date</div>
             <div class="description">
-              “L’arte di essere al posto giusto, nel momento giusto". Metodo
-              di calcolo della data propizia definito per la persona specifica e
-              il rispettivo obiettivo da raggiungere al fine di massimizzarne le
-              probabilità di riuscita.
+              “L’arte di essere al posto giusto nel momento giusto". <BR>Metodo di calcolo di una data propizia definita per una specifica persona e il rispettivo obiettivo da raggiungere al fine di massimizzarne le probabilità di riuscita.
+             
             </div>
           </div>
           <div class="childbody">
@@ -538,7 +512,7 @@ Sai quando <strong>fissare una riunione</strong> importante?<BR>
               </div>
           </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+                <a href="/tu-al-centro-prenota-la-tua-analisi"><button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
@@ -551,10 +525,9 @@ Sai quando <strong>fissare una riunione</strong> importante?<BR>
             </div>
             <div class="title">Bioarchitettura</div>
             <div class="description">
-              Disciplina che fonde il costruire consapevole rispettando
-              l'ambiente e il suo abitante. <BR>Predilige materiali ecosostenibili e
-              sistemi di risparmio energetico, risponde all'esigenza di vivere
-              in ambienti sani.<BR><BR>
+              Disciplina che fonde il costruire consapevole rispettando sia l'ambiente esterno sia vi abita.<br>
+Predilige i materiali ecosostenibili e i differenti sistemi di risparmio energetico, risponde all'esigenza di vivere armoniosamente in ambienti più sani.
+              
             </div>
           </div>
           <div class="childbody">
@@ -581,7 +554,7 @@ Sai quando <strong>fissare una riunione</strong> importante?<BR>
               </div>
           </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+                <a href="/aumenta-il-benessere-nel-tuo-ambiente-richiedi-la-tua-consulenza"><button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
@@ -593,9 +566,8 @@ Sai quando <strong>fissare una riunione</strong> importante?<BR>
             </div>
             <div class="title">Antenna Lecher</div>
             <div class="description">
-              Metodo d'indagine che permette la misurazione d'informazioni
-              energetiche e le relazione tra le varie sorgenti naturali ed
-              artificiali del campo elettromagnetico e gli organismi viventi.
+              Metodo d'indagine che permette la misurazione delle informazioni energetiche ed evidenzia le relazioni tra le varie sorgenti naturali e artificiali sia del campo elettromagnetico e sia degli organismi viventi.
+
             </div>
           </div>
           <div class="childbody">
@@ -623,7 +595,7 @@ Conosci come ti <strong>influenza la biosfera</strong><BR>
               </div>
           </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+                <a href="/aumenta-il-benessere-nel-tuo-ambiente-richiedi-la-tua-consulenza"><button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
@@ -635,9 +607,9 @@ Conosci come ti <strong>influenza la biosfera</strong><BR>
             </div>
             <div class="title">Qimen dun Jia</div>
             <div class="description">
-              Antica tecnica predittiva che permette di calcolare e individuare
-              la migliore strategia a sostegno delle decisioni da intraprendere,
-              obiettivi personali, in qualsiasi campo della vita dell’individuo.
+              Millenaria tecnica predittiva cinese che permette di calcolare e dunque individuare la migliore strategia a sostegno delle decisioni da intraprendere in qualsiasi campo della vita dell’individuo, personale, sociale, lavorativo.
+              
+              
             </div>
           </div>
           <div class="childbody">
@@ -665,7 +637,7 @@ Attua <strong>strategie</strong> verso i tuoi obiettivi<BR>
               </div>
           </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+                <a href="/tu-al-centro-prenota-la-tua-analisi"><button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
@@ -673,31 +645,6 @@ Attua <strong>strategie</strong> verso i tuoi obiettivi<BR>
       </div>
     </div>
 
-    <style> 
-    .container4{
-        width: 200px;
-        height: 200px;
-        position: relative;
-        margin: 20px;
-    }
-    .box4{
-        width: 100%;
-        height: 100%;            
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0.8;  /* for demo purpose  */
-    }
-    .stack-top4{
-        z-index: 9;
-        margin: 20px; /* for demo purpose  */
-    }
-</style>
-
-    <div class="container4">
-        <div class="box4" style="background: red;"></div>
-        <div class="box4 stack-top4" style="background: blue;"></div>
-    </div>
 
 </body>
 </html>

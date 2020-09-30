@@ -1,26 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
+<html><head></head>
 <body>
 <style>
       .tooltip {
         position: relative;
-       /* display: inline-block;
+        display: inline-block;
         border-bottom: 0px dotted black;
-        */
-        display: flex;
-  		  align-items: center;
-     
       }
 
       .tooltip .tooltiptext {
         visibility: hidden;
-        box-sizing: border-box;
-        width: 100%;
-        align-self: center;
-        vertical-align: top;
+        width: 400px;
         
         background-color: #333;
         color: #ffffff;
@@ -31,7 +20,7 @@
         z-index: 1;
         bottom: 100%;
         left: 50%;
-      /*  margin-left: -200px;*/
+        margin-left: -200px;
         opacity: 0;
         transition: opacity 0.3s;
 
@@ -78,6 +67,11 @@
         justify-content: space-around;
       }
 
+      .hchild {
+        flex: 1 1 30%;
+        
+        text-align: center;
+      }
       .child {
         flex: 1 1 30%;
         border-radius: 5px;
@@ -104,7 +98,11 @@
         background-color: #ffffff;
         border-radius: 3px;
         box-sizing: border-box;
+
+        /*border: 1px solid #f5a624;*/
+
         width: 100%;
+        
         align-self: center;
         vertical-align: top;
         /*align-items: center;*/
@@ -116,7 +114,6 @@
         color: #a9a9a9;
         padding-left: 15px;
         padding-right: 15px;
-        position: relative;
       }
 
       .title {
@@ -176,6 +173,7 @@
          background-color: #cb6e94;
          color: white;
          font-weight: bold;
+
       }
 
       .bttCasiduso
@@ -216,93 +214,170 @@
     .threeitemsfirst{
     	font-family: Ink Free; 
     	font-size: 16px;
-      background: #333;
-      color: #ffffff;
-      padding-left: 5px;
-      border-top-right-radius: 6px;
-      border-top-left-radius: 6px;
-
-      top: -20px;
-      left: 20px;
-      
-
 
     }
     .threeitemssecond{
     	font-family: Calibri; 
     	font-size: 16px;
     	font-weight: bold;
-    	padding-left: 25px; 
-    	background: #333;
-      color: #ffffff;
-
-      top: -20px;
-      left: 20px;
-      
+    	padding-left: 20px; 
+    	padding-top: 10px;
     }
+
+
     
 
-     .boxDesc{
-        width: 90%;
-        height: 90%;            
-        position: absolute;
-        opacity: 0.8;
-        border-radius: 6px;  
-        margin-top: -5px;
-        
+      .sfumatura {
+      filter:alpha(opacity=50);
+      -moz-opacity:.50;
+      opacity:.30;
+      }
 
-    }
-    .stack-top{
-        z-index: 9;
-        /*margin: 20px;*/ 
-        visibility: hidden;
-        background: #4b9bb0;
-        opacity: 1;
-        border: 4px;
-        padding: -15px -20px ;
-
-    }
-
+.round-button {
+    width:18px;
+    height:18px;
+    line-height:18px;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    color:#f5f5f5;
+    text-align:center;
+    text-decoration:none;
+   
+    background: #ffffff;
+    box-shadow: 0 0 3px gray;
     
-    </style>
-  <script>
-    function showCases(){
-      //alert('usecase.style.visibility=' + document.getElementById("ovGeobiologia").visibility);
-      document.getElementById("ovGeobiologia").style.visibility="visible";
+}
+.round-button:hover {
+    background: #777555;
+}
 
-     }      
-     function hiddenCases(){
-      //alert('usecase.style.visibility=' + document.getElementById("ovGeobiologia").visibility);
-      document.getElementById("ovGeobiologia").style.visibility="hidden";
 
-     }      
-  </script>
+.bttColoreSelezionato{
+    background: #4679BD;
+}
+
+.bttColoreDeselezionato{
+    background: #ffffff;
+}
+
+.selectedDesc{
+  font-weight: bold;
+}
+
+.unselectedDesc{
+  font-weight: normal;
+}
+  
+  .choiceContainer{
+    display: flex;
+    text-align: center;
+    align-self: center;
+    justify-content:space-between;
+  
+}
+ </style>
+ <script type="text/javascript">   
+     
+     var bottoneSelezionato;
+     var selezione;
+
+      function cleanAllChoiceButton(){
+        document.getElementById("choicePersona").classList.remove("bttColoreSelezionato");
+        document.getElementById("choiceAmbiente").classList.remove("bttColoreSelezionato");
+        document.getElementById("choiceEntrambi").classList.remove("bttColoreSelezionato");
+        document.getElementById("choicePersona").classList.toggle("bttColoreDeselezionato");
+        document.getElementById("choiceAmbiente").classList.toggle("bttColoreDeselezionato");
+        document.getElementById("choiceEntrambi").classList.toggle("bttColoreDeselezionato");
+        /*
+        document.getElementById("descPersona").classList.remove("selectedDesc");
+        document.getElementById("descAmbiente").classList.remove("selectedDesc");
+        document.getElementById("descEntrambi").classList.remove("selectedDesc");
+        document.getElementById("descPersona").classList.toggle("unselectedDesc");
+        document.getElementById("descAmbiente").classList.toggle("unselectedDesc");
+        document.getElementById("descEntrambi").classList.toggle("unselectedDesc");*/
+      }
+
+      function mostraPersona(){
+       if( selezione!=('P') ){
+          //alert("persona");
+          var elementsAmbiente = document.getElementsByClassName("ambienteClass");
+          for (var i = 0; i < elementsAmbiente.length; i++) {
+            elementsAmbiente[i].classList.toggle("sfumatura");
+          }
+          var elementsPersona = document.getElementsByClassName("personaClass");
+          for (var i = 0; i < elementsPersona.length; i++) {
+            elementsPersona[i].classList.remove("sfumatura");
+          }
+          cleanAllChoiceButton();
+          bottoneSelezionato = document.getElementById("choicePersona");
+          bottoneSelezionato.classList.remove("bttColoreDeselezionato");
+          bottoneSelezionato.classList.toggle("bttColoreSelezionato");
+          selezione = 'P';
+      }
+          
+    }
+      function mostraAmbiente(  ){
+        if( selezione!=('A') ){
+          //alert("ambiente");
+          var elementsAmbiente = document.getElementsByClassName("ambienteClass");
+          for (var i = 0; i < elementsAmbiente.length; i++) {
+            elementsAmbiente[i].classList.remove("sfumatura");
+          }
+          var elementsPersona = document.getElementsByClassName("personaClass");
+          for (var i = 0; i < elementsPersona.length; i++) {
+            elementsPersona[i].classList.toggle("sfumatura");
+          }
+          cleanAllChoiceButton();
+          bottoneSelezionato = document.getElementById("choiceAmbiente");
+          bottoneSelezionato.classList.remove("bttColoreDeselezionato");
+          bottoneSelezionato.classList.toggle("bttColoreSelezionato");
+          selezione='A';
+        }
+      }
+
+      function mostraTutti(  ){
+        if( selezione !=('AP') ){
+          //alert("persona & ambiente");
+          var elementsAmbiente = document.getElementsByClassName("ambienteClass");
+          for (var i = 0; i < elementsAmbiente.length; i++) {
+            elementsAmbiente[i].classList.remove("sfumatura");
+          }
+          var elementsPersona = document.getElementsByClassName("personaClass");
+          for (var i = 0; i < elementsPersona.length; i++) {
+            elementsPersona[i].classList.remove("sfumatura");
+          }
+          cleanAllChoiceButton();
+          bottoneSelezionato = document.getElementById("choiceEntrambi");
+          bottoneSelezionato.classList.remove("bttColoreDeselezionato");
+          bottoneSelezionato.classList.toggle("bttColoreSelezionato");
+          selezione='AP';
+        }
+      }
+ </script>
+    
+  
+  <div extContainer>
+   
+    <div class="dashboard" > 
+      <div class="flex">
+        <h1><span style="font-weight: bold; margin-bottom: 20px;"> Consulenze per la Persona e per l'Ambiente</span></h1>
+      </div>
+      <div class="flex">
+      <h2 style="color: grey">COSA OFFRO</h2></div>
+      <div class="flex">
+      Seleziona il tipo di consulenza di tuo interesse:
+      </div></div>
     <div class="dashboard">
       <div class="flex">
-       
-      <div class="child">
-        
+      <div class="hchild"><button id="choicePersona" class="round-button bttColoreDeselezionato" onclick= "mostraPersona()"></button><span id="descPersona" class="unselectedDesc"> per la Persona</span></div>
+      <div class="hchild"><button id="choiceAmbiente" class="round-button bttColoreDeselezionato" onclick= "mostraAmbiente()"></button><span id="descAmbiente" class="unselectedDesc"> per l'Ambiente</span></div>
+      <div class="hchild"><button id="choiceEntrambi" class="round-button bttColoreSelezionato" onclick= "mostraTutti()"></button><span id="descTutte" class="selectedDesc"> tutte le Consulenze</span></div>
+      <div class="child ambienteClass">  
           <div class="header">
             <div class="imagebox "> <img src="https://files.spazioweb.it/a0/db/a0db44bf-554f-4293-a9aa-839539ba2236.jpg" width="100%" height="100%"></div>
             <div class="title">Geobiologia</div>
             <div class="description">
-                <div class="boxDesc" >
-                  Metodo di divinazione cinese mediante la lettura degli esagrammi, comunemente chiamato "I Ching"; restituisce una lettura delle energie che transitano in quel particolare unico momento per offrire una maggiore comprensione della realtà che si vive.
-                </div>
-               <div class="boxDesc stack-top" id="ovGeobiologia">
-                
-                  <div  class="threeitemsfirst">
-                Meriti una <strong>vita</strong> più appagante?<BR>
-            Circondati di buona <strong>energia</strong> e <strong>armonia</strong><BR>
-            Potenzia la tua <strong>persona</strong> e il tuo <strong>benessere</strong><BR>
-                       </div>
-                    <div class="threeitemssecond"> 
-                      ✓ INCANALA l’ABBONDANZA<BR>
-              ✓ TRASFORMA l’ENERGIA nello SPAZIO<BR>
-                          ✓ MASSIMIZZA il tuo AMBIENTE<BR>
-
-                    </div>
-                </div>
+              Disciplina che studia l'influenza delle emanazioni cosmiche e geotelluriche su tutti gli esseri viventi.<BR> L'obiettivo finale di questa analisi è l’individuazione di ambienti sani sui quali non gravino influenze negative e/o nocive per chi li vive quotidianamente.
             </div>
           </div>
           <div class="childbody">
@@ -312,29 +387,41 @@
                 <button class="btn bttDettagli">DETTAGLI</button>
               </div>
               <div class="buttonbox">
-              
-                <button class="btn bttCasiduso" onmouseover="showCases()" onmouseout="hiddenCases()">CASI D'USO</button>
+                <div class="tooltip">
+                <button class="btn bttCasiduso">CASI D'USO</button>
+                <div class="tooltiptext">
+	                <div  class="threeitemsfirst">
+	                  
+	                   Desideri <strong>svegliarti più riposato</strong>?<BR>
+	                   Vuoi vivere in <strong>aree sane</strong>?<BR>
+	                   Vuoi evitare di esporti a <strong>emissioni nocive naturali</strong>?<BR>
+	                  
+	                </div>
+	                <div class="threeitemssecond"> 
+	                  ✓ RISTABILISCI l’EQUILIBRIO<BR>
+	 				  ✓ RENDI SANO l’AMBIENTE<BR>
+	 				  ✓ SUPPORTA l’ORGANISMO <BR> 				  
+	                </div>           
+            </div>
+              </div>
             </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+               <a href="/aumenta-il-benessere-nel-tuo-ambiente-richiedi-la-tua-consulenza"> <button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
         </div>
         
         
-        <div class="child">
+        <div class="child ambienteClass">
           <div class="header">
             <div class="imagebox">
               <img class="myimg" src="https://files.spazioweb.it/7d/2f/7d2f4c51-3857-43cf-a527-ec8216abbb8f.jpg" width="100%" height="100%">
             </div>
             <div class="title">Feng Shui</div>
             <div class="description">
-              Scienza metafisica orientale utilizzabile sia nelle abitazioni
-              private sia in ambienti lavorativi, potenzia il benessere
-              psicofisico, relazionale, lo stato di salute così come incrementa
-              la produttività e migliora le potenzialità e talenti di chi abita
-              o lavora in questi luoghi.
+              
+              Scienza metafisica orientale utilizzabile sia nelle abitazioni private sia in ambienti lavorativi, potenzia il benessere psicofisico, relazionale, lo stato di salute così come incrementa la produttività e migliora le potenzialità e i talenti di chi abita o lavora in questi luoghi.
             </div>
           </div>
           <div class="childbody">
@@ -363,20 +450,20 @@
                 </div>
               </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+               <a href="/aumenta-il-benessere-nel-tuo-ambiente-richiedi-la-tua-consulenza"> <button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
         </div>
-        <div class="child">
+        <div class="child ambienteClass">
           <div class="header">
             <div class="imagebox"> <img src="https://files.spazioweb.it/25/4b/254b7c12-210d-41de-80ed-2e6712819973.jpg" width="100%" height="100%"></div>
             <div class="title">Elettrosmog</div>
             <div class="description">
-              Inquinamento elettromagnetico, conseguenza del progresso
-              tecnologico, tratta emissioni elettriche, magnetiche ed
-              elettromagnetiche emesse da fonti artificiali.<BR> L'investigazione di
-              queste emissioni mira la tutela della persona.
+              
+              Inquinamento elettromagnetico: una conseguenza del progresso tecnologico, frutto di emissioni elettriche, magnetiche ed elettromagnetiche emesse da fonti artificiali.
+L'investigazione di queste emissioni e gli interventi successivi mirano alla tutela della salute della persona.
+
             </div>
           </div>
           <div class="childbody">
@@ -405,22 +492,20 @@
               </div>
            </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+                <a href="/aumenta-il-benessere-nel-tuo-ambiente-richiedi-la-tua-consulenza"><button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
         </div>
-        <div class="child">
+        <div class="child personaClass">
           <div class="header">
             <div class="imagebox">
                <img src="https://files.spazioweb.it/85/d3/85d321f7-079b-4895-a857-b1aca354e717.jpg" width="100%" height="100%">
             </div>
             <div class="title">Yi Jing</div>
             <div class="description">
-              Metodo di divinazione mediante gli esagrammi, chiamato anche "I
-              Ching", restituisce una lettura delle energie che transitano in
-              quel particolare momento presente al fine di una maggiore
-              comprensione della realtà che si vive.
+              Metodo di divinazione cinese mediante la lettura degli esagrammi, comunemente chiamato "I Ching"; restituisce una lettura delle energie che transitano in quel particolare unico momento per offrire una maggiore comprensione della realtà che si vive.
+              
             </div>
           </div>
           <div class="childbody">
@@ -451,22 +536,19 @@
               </div>
           </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+                <a href="/tu-al-centro-prenota-la-tua-analisi"><button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
         </div>
-        <div class="child">
+        <div class="child personaClass">
           <div class="header">
             <div class="imagebox">
                <img src="https://files.spazioweb.it/89/28/8928b8db-25fb-4e3f-8a46-f6f83a42881a.jpg" width="100%" height="100%">
             </div>
             <div class="title">Bazi</div>
             <div class="description">
-              Sistema avanzato di astrologia, tecnica che analizza la tipologia
-              e la composizione energetica individuale, le predisposizioni e le
-              attitudini, le interazioni con le energie che transitano nel tempo
-              e che creano influenze positive o sfavorevoli.
+             Sistema avanzato di astrologia, una tecnica che analizza la tipologia e la composizione energetica individuale, le predisposizioni e le attitudini, le interazioni con le energie che transitano nel tempo e che creano influenze positive o sfavorevoli.
             </div>
           </div>
           <div class="childbody">
@@ -495,22 +577,20 @@ Arricchisci <strong>relazioni lavorative</strong> e <strong>private</strong><br>
               </div>
           </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+                <a href="/tu-al-centro-prenota-la-tua-analisi"><button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
         </div>
-        <div class="child">
+        <div class="child personaClass">
           <div class="header">
             <div class="imagebox">
                <img src="https://files.spazioweb.it/b2/47/b2478614-1aa1-4b0c-bf2f-c1d41d47581b.jpg" width="100%" height="100%">
             </div>
             <div class="title">Selection Date</div>
             <div class="description">
-              “L’arte di essere al posto giusto, nel momento giusto". Metodo
-              di calcolo della data propizia definito per la persona specifica e
-              il rispettivo obiettivo da raggiungere al fine di massimizzarne le
-              probabilità di riuscita.
+              “L’arte di essere al posto giusto nel momento giusto". <BR>Metodo di calcolo di una data propizia definita per una specifica persona e il rispettivo obiettivo da raggiungere al fine di massimizzarne le probabilità di riuscita.
+             
             </div>
           </div>
           <div class="childbody">
@@ -538,23 +618,22 @@ Sai quando <strong>fissare una riunione</strong> importante?<BR>
               </div>
           </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+                <a href="/tu-al-centro-prenota-la-tua-analisi"><button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="child">
+        <div class="child ambienteClass">
           <div class="header">
             <div class="imagebox">
                 <img src="https://files.spazioweb.it/db/89/db89ff5b-9723-41c6-817b-5e66d2012691.jpg" width="100%" height="100%">
             </div>
             <div class="title">Bioarchitettura</div>
             <div class="description">
-              Disciplina che fonde il costruire consapevole rispettando
-              l'ambiente e il suo abitante. <BR>Predilige materiali ecosostenibili e
-              sistemi di risparmio energetico, risponde all'esigenza di vivere
-              in ambienti sani.<BR><BR>
+              Disciplina che fonde il costruire consapevole rispettando sia l'ambiente esterno sia vi abita.<br>
+Predilige i materiali ecosostenibili e i differenti sistemi di risparmio energetico, risponde all'esigenza di vivere armoniosamente in ambienti più sani.
+              
             </div>
           </div>
           <div class="childbody">
@@ -581,7 +660,7 @@ Sai quando <strong>fissare una riunione</strong> importante?<BR>
               </div>
           </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+                <a href="/aumenta-il-benessere-nel-tuo-ambiente-richiedi-la-tua-consulenza"><button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
@@ -593,9 +672,8 @@ Sai quando <strong>fissare una riunione</strong> importante?<BR>
             </div>
             <div class="title">Antenna Lecher</div>
             <div class="description">
-              Metodo d'indagine che permette la misurazione d'informazioni
-              energetiche e le relazione tra le varie sorgenti naturali ed
-              artificiali del campo elettromagnetico e gli organismi viventi.
+              Metodo d'indagine che permette la misurazione delle informazioni energetiche ed evidenzia le relazioni tra le varie sorgenti naturali e artificiali sia del campo elettromagnetico e sia degli organismi viventi.
+
             </div>
           </div>
           <div class="childbody">
@@ -623,21 +701,21 @@ Conosci come ti <strong>influenza la biosfera</strong><BR>
               </div>
           </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+                <a href="/aumenta-il-benessere-nel-tuo-ambiente-richiedi-la-tua-consulenza"><button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
         </div>
-        <div class="child">
+        <div class="child personaClass">
           <div class="header">
             <div class="imagebox">
                <img src="https://files.spazioweb.it/5c/f0/5cf098e2-8cac-4165-be40-0a17c39776ac.jpg" width="100%" height="100%">
             </div>
             <div class="title">Qimen dun Jia</div>
             <div class="description">
-              Antica tecnica predittiva che permette di calcolare e individuare
-              la migliore strategia a sostegno delle decisioni da intraprendere,
-              obiettivi personali, in qualsiasi campo della vita dell’individuo.
+              Millenaria tecnica predittiva cinese che permette di calcolare e dunque individuare la migliore strategia a sostegno delle decisioni da intraprendere in qualsiasi campo della vita dell’individuo, personale, sociale, lavorativo.
+              
+              
             </div>
           </div>
           <div class="childbody">
@@ -665,39 +743,13 @@ Attua <strong>strategie</strong> verso i tuoi obiettivi<BR>
               </div>
           </div>
               <div class="buttonbox">
-                <button class="btn bttPrenota">PRENOTA</button>
+                <a href="/tu-al-centro-prenota-la-tua-analisi"><button class="btn bttPrenota">PRENOTA</button></a>
               </div>
             </div>
           </div>
         </div>     
       </div>
     </div>
+  </div><!-- external container -->
 
-    <style> 
-    .container4{
-        width: 200px;
-        height: 200px;
-        position: relative;
-        margin: 20px;
-    }
-    .box4{
-        width: 100%;
-        height: 100%;            
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0.8;  /* for demo purpose  */
-    }
-    .stack-top4{
-        z-index: 9;
-        margin: 20px; /* for demo purpose  */
-    }
-</style>
-
-    <div class="container4">
-        <div class="box4" style="background: red;"></div>
-        <div class="box4 stack-top4" style="background: blue;"></div>
-    </div>
-
-</body>
-</html>
+</body></html>
